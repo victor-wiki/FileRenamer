@@ -205,7 +205,7 @@
             // 
             // txtInsertAfter
             // 
-            this.txtInsertAfter.Location = new System.Drawing.Point(344, 3);
+            this.txtInsertAfter.Location = new System.Drawing.Point(337, 3);
             this.txtInsertAfter.Name = "txtInsertAfter";
             this.txtInsertAfter.Size = new System.Drawing.Size(97, 21);
             this.txtInsertAfter.TabIndex = 40;
