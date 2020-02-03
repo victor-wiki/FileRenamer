@@ -389,9 +389,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(251, 9);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(365, 12);
+            this.label8.Size = new System.Drawing.Size(371, 12);
             this.label8.TabIndex = 51;
-            this.label8.Text = "(the position started with 1, 0 or -1 stands for to the end)";
+            this.label8.Text = "(The position started with 1, 0 or -1 stands for to the end.)";
             // 
             // panelExtract
             // 
