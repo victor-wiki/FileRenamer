@@ -71,6 +71,7 @@
             this.tsmiRemove = new System.Windows.Forms.ToolStripMenuItem();
             this.openInExplorerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cboFilter = new System.Windows.Forms.ComboBox();
+            this.tsmiClearAll = new System.Windows.Forms.ToolStripMenuItem();
             this.panelNewChar.SuspendLayout();
             this.panelInsert.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudStartPosition)).BeginInit();
@@ -461,22 +462,23 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiRemove,
+            this.tsmiClearAll,
             this.openInExplorerToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(176, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(174, 70);
             // 
             // tsmiRemove
             // 
             this.tsmiRemove.Name = "tsmiRemove";
-            this.tsmiRemove.Size = new System.Drawing.Size(175, 22);
-            this.tsmiRemove.Text = "Remove selected";
+            this.tsmiRemove.Size = new System.Drawing.Size(173, 22);
+            this.tsmiRemove.Text = "remove selected";
             this.tsmiRemove.Click += new System.EventHandler(this.tsmiRemove_Click);
             // 
             // openInExplorerToolStripMenuItem
             // 
             this.openInExplorerToolStripMenuItem.Name = "openInExplorerToolStripMenuItem";
-            this.openInExplorerToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.openInExplorerToolStripMenuItem.Text = "Open in explorer";
+            this.openInExplorerToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.openInExplorerToolStripMenuItem.Text = "open in explorer";
             this.openInExplorerToolStripMenuItem.Click += new System.EventHandler(this.openInExplorerToolStripMenuItem_Click);
             // 
             // cboFilter
@@ -486,6 +488,13 @@
             this.cboFilter.Name = "cboFilter";
             this.cboFilter.Size = new System.Drawing.Size(129, 20);
             this.cboFilter.TabIndex = 54;
+            // 
+            // tsmiClearAll
+            // 
+            this.tsmiClearAll.Name = "tsmiClearAll";
+            this.tsmiClearAll.Size = new System.Drawing.Size(173, 22);
+            this.tsmiClearAll.Text = "clear all";
+            this.tsmiClearAll.Click += new System.EventHandler(this.tsmiClearAll_Click);
             // 
             // frmMain
             // 
@@ -574,6 +583,7 @@
         private System.Windows.Forms.RadioButton rbExtractByPosition;
         private System.Windows.Forms.TextBox txtExractExpression;
         private System.Windows.Forms.ComboBox cboFilter;
+        private System.Windows.Forms.ToolStripMenuItem tsmiClearAll;
     }
 }
 

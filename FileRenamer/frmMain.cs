@@ -292,5 +292,10 @@ namespace FileRenamer
                 exts.ForEach(item => this.cboFilter.Items.Add(item));
             }
         }
+
+        private void tsmiClearAll_Click(object sender, EventArgs e)
+        {
+            this.lvFile.Clear();
+        }
     }
 }
