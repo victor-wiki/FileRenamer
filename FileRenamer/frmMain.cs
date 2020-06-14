@@ -1,5 +1,7 @@
 ﻿using FileRenameHandler;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
@@ -283,14 +285,37 @@ namespace FileRenamer
         private void txtFolder_TextChanged(object sender, EventArgs e)
         {
             string folder = this.txtFolder.Text;
+
             if (!string.IsNullOrEmpty(folder) && Directory.Exists(folder))
             {
                 DirectoryInfo di = new DirectoryInfo(folder);
-                var exts = di.GetFiles("*.*", SearchOption.AllDirectories).GroupBy(item => item.Extension.ToLower()).Select(item => item.Key).ToList();
+
+                IEnumerable<FileInfo> files;
+
+                if(Path.GetPathRoot(folder) == folder)
+                {
+                    files = di.GetDirectories().Where(item => item.Name != "System Volume Information").SelectMany(item => this.GetFiles(item));
+                }
+                else
+                {
+                    files = this.GetFiles(di);
+                }
+
+                var exts = files
+                    .Where(item => (item.Attributes & FileAttributes.Hidden) == 0)
+                    .GroupBy(item => item.Extension.ToLower())
+                    .Select(item => item.Key).ToList();
 
                 this.cboFilter.Items.Clear();
                 exts.ForEach(item => this.cboFilter.Items.Add(item));
             }
+
+            
+        }
+
+        private IEnumerable<FileInfo> GetFiles(DirectoryInfo directoryInfo)
+        {
+            return directoryInfo.GetFiles("*.*", SearchOption.AllDirectories);
         }
 
         private void tsmiClearAll_Click(object sender, EventArgs e)
