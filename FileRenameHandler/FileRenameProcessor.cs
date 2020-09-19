@@ -43,7 +43,18 @@ namespace FileRenameHandler
                     {
                         if (this.CheckExpression(oldChar, out errMsg))
                         {
-                            newFileName = this.HandleExpressioin(oldChar, fileName);
+                            bool matched = false;
+
+                            string result = this.HandleExpressioin(oldChar, fileName, out matched);
+
+                            if(matched)
+                            {
+                                newFileName = fileName.Replace(result, newChar);
+                            }
+                            else
+                            {
+                                newFileName = result;
+                            }                            
                         }
                         else
                         {
@@ -115,7 +126,7 @@ namespace FileRenameHandler
                         string expression = this.Option.ExtractExpression;
                         if (this.CheckExpression(expression, out errMsg))
                         {
-                            newFileName = this.HandleExpressioin(expression, fileName);
+                            newFileName = this.HandleExpressioin(expression, fileName, out _);
                         }
                         else
                         {
@@ -155,12 +166,16 @@ namespace FileRenameHandler
             return true;
         }
 
-        private string HandleExpressioin(string expression, string fileName)
+        private string HandleExpressioin(string expression, string fileName, out bool matched)
         {
+            matched = false;
+
             Regex reg = new Regex(expression, RegexOptions.IgnoreCase);
             MatchCollection matches = reg.Matches(fileName);
             if (matches.Count > 0)
             {
+                matched = true;
+
                 return matches[0].Value;
             }
             return fileName;

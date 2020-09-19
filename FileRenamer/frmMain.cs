@@ -110,6 +110,7 @@ namespace FileRenamer
                 if (!string.IsNullOrEmpty(errMsg))
                 {
                     MessageBox.Show(errMsg);
+                    break;
                 }
                 else
                 {
@@ -308,9 +309,7 @@ namespace FileRenamer
 
                 this.cboFilter.Items.Clear();
                 exts.ForEach(item => this.cboFilter.Items.Add(item));
-            }
-
-            
+            }            
         }
 
         private IEnumerable<FileInfo> GetFiles(DirectoryInfo directoryInfo)
