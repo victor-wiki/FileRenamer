@@ -129,17 +129,24 @@ namespace FileRenamer
             {
                 FileInfo file = item.Tag as FileInfo;
 
-                string fileName = Path.GetFileNameWithoutExtension(file.Name);
-                string newFileName = item.SubItems[1].Text;
-
-                if (!string.IsNullOrEmpty(newFileName) && newFileName != fileName)
+                if(File.Exists(file.FullName))
                 {
-                    string newFilePath = Path.Combine(file.DirectoryName, newFileName);
-                    if (!File.Exists(newFilePath))
+                    string fileName = Path.GetFileNameWithoutExtension(file.Name);
+                    string newFileName = item.SubItems[1].Text;
+
+                    if (!string.IsNullOrEmpty(newFileName) && newFileName != fileName)
                     {
-                        file.MoveTo(newFilePath);
-                        count++;
+                        string newFilePath = Path.Combine(file.DirectoryName, newFileName);
+                        if (!File.Exists(newFilePath))
+                        {
+                            file.MoveTo(newFilePath);
+                            count++;
+                        }
                     }
+                } 
+                else
+                {
+                    item.BackColor = Color.Yellow;
                 }
             }
 
@@ -319,7 +326,7 @@ namespace FileRenamer
 
         private void tsmiClearAll_Click(object sender, EventArgs e)
         {
-            this.lvFile.Clear();
+            this.lvFile.Items.Clear();
         }
     }
 }

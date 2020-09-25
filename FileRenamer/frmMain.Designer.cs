@@ -69,9 +69,9 @@
             this.chkOldCharByExpression = new System.Windows.Forms.CheckBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiRemove = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiClearAll = new System.Windows.Forms.ToolStripMenuItem();
             this.openInExplorerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cboFilter = new System.Windows.Forms.ComboBox();
-            this.tsmiClearAll = new System.Windows.Forms.ToolStripMenuItem();
             this.panelNewChar.SuspendLayout();
             this.panelInsert.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudStartPosition)).BeginInit();
@@ -465,20 +465,27 @@
             this.tsmiClearAll,
             this.openInExplorerToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(174, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(177, 70);
             // 
             // tsmiRemove
             // 
             this.tsmiRemove.Name = "tsmiRemove";
-            this.tsmiRemove.Size = new System.Drawing.Size(173, 22);
-            this.tsmiRemove.Text = "remove selected";
+            this.tsmiRemove.Size = new System.Drawing.Size(176, 22);
+            this.tsmiRemove.Text = "Remove Selected";
             this.tsmiRemove.Click += new System.EventHandler(this.tsmiRemove_Click);
+            // 
+            // tsmiClearAll
+            // 
+            this.tsmiClearAll.Name = "tsmiClearAll";
+            this.tsmiClearAll.Size = new System.Drawing.Size(176, 22);
+            this.tsmiClearAll.Text = "Clear All";
+            this.tsmiClearAll.Click += new System.EventHandler(this.tsmiClearAll_Click);
             // 
             // openInExplorerToolStripMenuItem
             // 
             this.openInExplorerToolStripMenuItem.Name = "openInExplorerToolStripMenuItem";
-            this.openInExplorerToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.openInExplorerToolStripMenuItem.Text = "open in explorer";
+            this.openInExplorerToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.openInExplorerToolStripMenuItem.Text = "Open In Explorer";
             this.openInExplorerToolStripMenuItem.Click += new System.EventHandler(this.openInExplorerToolStripMenuItem_Click);
             // 
             // cboFilter
@@ -488,13 +495,6 @@
             this.cboFilter.Name = "cboFilter";
             this.cboFilter.Size = new System.Drawing.Size(129, 20);
             this.cboFilter.TabIndex = 54;
-            // 
-            // tsmiClearAll
-            // 
-            this.tsmiClearAll.Name = "tsmiClearAll";
-            this.tsmiClearAll.Size = new System.Drawing.Size(173, 22);
-            this.tsmiClearAll.Text = "clear all";
-            this.tsmiClearAll.Click += new System.EventHandler(this.tsmiClearAll_Click);
             // 
             // frmMain
             // 
