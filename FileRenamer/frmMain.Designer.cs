@@ -347,6 +347,8 @@
             // 
             this.chkBaseOnNewName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.chkBaseOnNewName.AutoSize = true;
+            this.chkBaseOnNewName.Checked = true;
+            this.chkBaseOnNewName.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkBaseOnNewName.Location = new System.Drawing.Point(8, 464);
             this.chkBaseOnNewName.Name = "chkBaseOnNewName";
             this.chkBaseOnNewName.Size = new System.Drawing.Size(120, 16);
