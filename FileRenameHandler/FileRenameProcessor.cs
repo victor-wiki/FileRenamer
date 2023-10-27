@@ -80,6 +80,10 @@ namespace FileRenameHandler
                     {
                         insertBeforeIndex = fileName.IndexOf(insertBeforeChar);
                     }
+                    else
+                    {
+                        insertBeforeIndex = 0;
+                    }
 
                     if (!string.IsNullOrEmpty(insertAfterChar))
                     {
