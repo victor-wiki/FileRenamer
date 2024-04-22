@@ -13,6 +13,8 @@ namespace FileRenamer
 {
     public partial class frmMain : Form
     {
+        private bool previewed = false;
+
         public frmMain()
         {
             InitializeComponent();
@@ -120,6 +122,8 @@ namespace FileRenamer
 
                 item.ForeColor = file.Name == newFileName ? Color.Black : Color.Blue;
             }
+
+            this.previewed = true;
         }
 
         private void RenameFile()
@@ -167,8 +171,14 @@ namespace FileRenamer
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            this.PreHandleFileName();
+            if(!this.previewed)
+            {
+                this.PreHandleFileName();
+            }
+           
             this.RenameFile();
+
+            this.previewed = false;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
